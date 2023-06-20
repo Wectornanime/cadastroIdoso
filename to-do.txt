@@ -1,0 +1,20 @@
+elerly:
+[x] - create
+[x] - read
+[x] - update
+[x] - delete
+
+remedy:
+[x] - create
+[x] - read
+[] - update
+[] - delete
+
+remedy-elderly:
+[] - create
+[x] - read
+[] - delete
+
+
+-- pop
+[] - botão voltar

@@ -1,0 +1,13 @@
+{
+    "menuOpc": [
+        "Sair",
+        "Cadastar idoso",
+        "Listar idosos",
+        "Atualizar dados de um idoso",
+        "Deletar registro de um idoso",
+        "Cadastar remedio",
+        "Listar remedios",
+        "Atualizar dados de um remedio",
+        "Deletar registro de um remedio"
+    ]
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <ul>
+            <li onclick="swap(0)">Cadastar idosos</li>
+            <li onclick="swap(1)">Listar idosos</li>
+            <li style="cursor: default;">|</li>
+            <li onclick="swap(2)">Cadastar remédios</li>
+            <li onclick="swap(3)">Listar remédios</li>
+        </ul>
+    </nav>
+    <main>
+        <div class="content">
+            <section class="cad elderly">
+                <h1>Cadastro de idosos</h1>
+                <form class="cad elderly">
+                    <label for="name">Nome completo: </label>
+                    <br>
+                    <input type="text" id="name" placeholder="Nome Completo">
+                    <br>
+                    <label for="birth">Data de Nascimento: </label>
+                    <br>
+                    <input type="date" id="birth">
+                    <br>
+                    <label for="cpf">CPF: </label>
+                    <br>
+                    <input type="text" id="cpf" maxlength="14" placeholder="CPF">
+                </form>
+                <button type="submit" onclick="registerElderly()">Cadastar</button>
+            </section>
+
+            <section class="list elderly">
+                <h1>Lista dos idosos</h1>
+                <ul class="list elderly"></ul>
+            </section>
+
+            <section class="cad remedy">
+                <h1>Cadastro de Remedios</h1>
+                <form class="cad remedy">
+                    <label for="name">Nome: </label>
+                    <br>
+                    <input type="text" id="name" placeholder="Nome">
+                    <br>
+                    <label for="control">É controlado? </label>
+                    <br>
+                    <input type="radio" name="control" id="controled" value="sim">
+                    <label for="controled">Sim</label>
+                    <input type="radio" name="control" id="notControled" value="nao" checked>
+                    <label for="notControled">Não</label>
+                </form>
+                <button type="submit" onclick="registerRemedy()">Cadastar</button>
+            </section>
+
+            <section class="list remedy">
+                <h1>Lista dos remédios</h1>
+                <ul class="list remedy"></ul>
+            </section>
+        </div>
+    </main>
+
+
+
+    <span class="popInfo">
+        <input type="text" id="cpf" maxlength="14" placeholder="CPF">
+    </span>
+    
+    <script src="script.js"></script>
+    <script src="conect.js"></script>
+    <script src="pops.js"></script>
+    <script src="pops-scripts.js"></script>
+    <script>
+        listElderly();
+        listRemedy();
+        // ---
+        // swap(1);
+        // popElderlyRemedy('teste')
+    </script>
+</body>
+</html>

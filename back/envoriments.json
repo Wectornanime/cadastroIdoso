@@ -1,0 +1,13 @@
+{
+    "db":{
+      "host": "localhost",
+      "user": "root",
+      "password": "root",
+      "database": "cadastro_bd",
+      "tables": {
+        "elderly": "cadastroidoso",
+        "remedy": "remedios",
+        "elderlyRemedy": "remedio_idoso"
+      }
+    }
+  }

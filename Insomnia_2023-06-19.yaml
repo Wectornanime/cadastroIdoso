@@ -1,0 +1,348 @@
+_type: export
+__export_format: 4
+__export_date: 2023-06-20T01:35:28.389Z
+__export_source: insomnia.desktop.app:v2023.2.2
+resources:
+  - _id: req_e1e6f377573d4e00a2d9ff54f24f601d
+    parentId: fld_8e0c494d69a947fe84a4af06d2b5e5d6
+    modified: 1687204527454
+    created: 1687101469284
+    url: http://localhost:3000/elderly/create
+    name: Cadastrar idoso
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "user teste",
+        	"birth": "2002-12-12",
+        	"cpf": "123.123.709-01"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1687101469284
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8e0c494d69a947fe84a4af06d2b5e5d6
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687101462494
+    created: 1687101462494
+    name: idosos
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1687101462494
+    _type: request_group
+  - _id: wrk_82e5cea0ea4a466895c81f7335344f86
+    parentId: null
+    modified: 1687101413602
+    created: 1687101413602
+    name: bank
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_66205797738b46378203dd7652b3609b
+    parentId: fld_8e0c494d69a947fe84a4af06d2b5e5d6
+    modified: 1687118076550
+    created: 1687102398352
+    url: http://localhost:3000/elderly/list/
+    name: Listar idoso
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686729221022.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9742275325534704bd193d4965362197
+    parentId: fld_8e0c494d69a947fe84a4af06d2b5e5d6
+    modified: 1687204524404
+    created: 1687103270271
+    url: http://localhost:3000/elderly/update/
+    name: Atualizar idoso
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"name": "teste-1",
+        	"birth": "2001-10-1",
+          "cpf": "111.111.111-11"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686543096891.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_ccdf03d901844c37b22dc329483d0f92
+    parentId: fld_8e0c494d69a947fe84a4af06d2b5e5d6
+    modified: 1687104533946
+    created: 1687103278607
+    url: http://localhost:3000/elderly/delete/
+    name: Deletar idoso
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686450034826.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_691bd2a019cb43869a6eda317497927f
+    parentId: fld_661e7b102fc94dfe8b3eff65547d3707
+    modified: 1687105170416
+    created: 1687104306988
+    url: http://localhost:3000/remedy/create
+    name: Cadastrar
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "remedy 2 teste",
+        	"isControled": "sim"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1687101469284
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_661e7b102fc94dfe8b3eff65547d3707
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687104408321
+    created: 1687104306984
+    name: remedios
+    description: ""
+    environment:
+      teste: 1234
+    environmentPropertyOrder:
+      "&":
+        - teste
+    metaSortKey: -1687101462444
+    _type: request_group
+  - _id: req_3adceb07ebba4e9c92b291dd8b29f27e
+    parentId: fld_661e7b102fc94dfe8b3eff65547d3707
+    modified: 1687104503519
+    created: 1687104306994
+    url: http://localhost:3000/remedy/list/
+    name: Listar
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686729221022.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_efad8c99ec044e0f9525cd670f1c8593
+    parentId: fld_661e7b102fc94dfe8b3eff65547d3707
+    modified: 1687105158698
+    created: 1687104307002
+    url: http://localhost:3000/remedy/update/1a1a62e3-7abb-4e9a-b8bd-4ef508f83e66
+    name: Atualizar
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	
+        	"name": "remedio 1"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1686543096891.75
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f99ce3a7af6144db98fcd7ceced68bb4
+    parentId: fld_661e7b102fc94dfe8b3eff65547d3707
+    modified: 1687105188740
+    created: 1687104307008
+    url: http://localhost:3000/remedy/delete/b9d359d9-558f-40da-b731-bc5b5b36662f
+    name: Deletar
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1686450034826.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7748a84be39e418994f8eb1894507b46
+    parentId: fld_69ab0176052448a88250269c453d05b4
+    modified: 1687110571420
+    created: 1687105308299
+    url: http://localhost:3000/elderly/f64dcc7e-a15b-448e-beca-3798b373d365/remedy/create
+    name: Criar relação
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"remedys": [
+        		"1a1a62e3-7abb-4e9a-b8bd-4ef508f83e66",
+        		"d6fc8512-a4fc-4f2f-bffd-d455f129b32d"
+        	]
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1687105308299
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_69ab0176052448a88250269c453d05b4
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687105305899
+    created: 1687105290861
+    name: relação remédio-idoso
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1687101462394
+    _type: request_group
+  - _id: req_b8ed15b0b8a149d9bb7d4737d460057e
+    parentId: fld_69ab0176052448a88250269c453d05b4
+    modified: 1687110719644
+    created: 1687110705923
+    url: http://localhost:3000/elderly/f64dcc7e-a15b-448e-beca-3798b373d365/remedy/list
+    name: Listar relação
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1687104348545.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_814e0e81f74341599d41d086c35899f5
+    parentId: fld_69ab0176052448a88250269c453d05b4
+    modified: 1687111239615
+    created: 1687108667232
+    url: http://localhost:3000/elderly/f64dcc7e-a15b-448e-beca-3798b373d365/remedy/delete/1a1a62e3-7abb-4e9a-b8bd-4ef508f83e66
+    name: Deletar relação
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1687103388791.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_70037f72e017310a539d4bde0b36b237aa23302a
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687101413609
+    created: 1687101413609
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1687101413609
+    _type: environment
+  - _id: jar_70037f72e017310a539d4bde0b36b237aa23302a
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687101413614
+    created: 1687101413614
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_9f106249618a4a2193d5a11aeec35583
+    parentId: wrk_82e5cea0ea4a466895c81f7335344f86
+    modified: 1687101413603
+    created: 1687101413603
+    fileName: bank
+    contents: ""
+    contentType: yaml
+    _type: api_spec

@@ -7,13 +7,13 @@ elerly:
 remedy:
 [x] - create
 [x] - read
-[] - update
-[] - delete
+[x] - update
+[x] - delete
 
 remedy-elderly:
 [] - create
 [x] - read
-[] - delete
+[x] - delete
 
 
 -- pop

@@ -5,6 +5,8 @@ let spanCpf = document.querySelector('span').children['cpf'];
 function swap(sec) {
     let width = 710
     mainContent.style.transform = `translateX(-${sec * width}px)`;
+    listElderly();
+    listRemedy();
 };
     
 inputCpf.addEventListener('keypress', (char) => {

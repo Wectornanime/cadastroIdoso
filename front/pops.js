@@ -69,12 +69,13 @@ function popRemedy(id) {
             response = response[0];
             const html = `
             <h1>Dados do remédio</h1>
-            <p>Nome: ${response.name}</p>
-            ${
-                (response.isControled === 'sim') ? (`<p>O remédio é controlado!</p>`) : (`<p>O remédio não é controlado!</p>`)
-            }
+            <p>Nome: ${response.name} <button onclick="popRemedyEditName('${response.id}')">Editar</button></p>
+            <p>${
+                (response.isControled === 'sim') ? (`O remédio é controlado!`) : (`O remédio não é controlado!`)
+            } <button onclick="popRemedyEditIsControled('${response.id}')">Editar</button></p>
             <br>
             <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button onclick="deleteRemedy('${response.id}')">Deletar</button>
             `;
             
 
@@ -85,7 +86,7 @@ function popRemedy(id) {
 };
 
 function popElderlyRemedy(id) {
-    span.style.height = '250px';
+    span.style.height = '350px';
     const url = hostBack + '/elderly/' + id + '/remedy/list/';
 
     if (id === 'teste') {
@@ -105,17 +106,57 @@ function popElderlyRemedy(id) {
                 html += `
                     <p>${data.name} &bull; ${
                         (data.isControled === 'sim') ? ('Controlado') : ('Não controlado')
-                    }</p>
+                    } <button onclick="removeElderlyRemedy('${id}', '${data.id}')">Remover</button></p>
                 `;
             };
 
-            html += `<button onclick="span.style.visibility = 'hidden'">Fechar</button>`
+            html += `
+            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button onclick="popElderlyAddRemedy('${id}')">Adicionar</button>
+            `;
 
             span.innerHTML = html;
             span.style.visibility = 'visible';
         });
     };
 };
+
+function popElderlyAddRemedy(elderlyID) {
+    let urlGetElderly = hostBack + '/elderly/list/' + elderlyID;
+    let urlGetRemedy = hostBack + '/remedy/list/';
+    
+    span.style.height = '350px';
+    let html = '<h1>Adicionar Remédios</h1>';
+
+    fetch(urlGetElderly).then((r) => r.json()).then((response) => {
+        response = response[0];
+        let remedyList = [];
+        for (remedy of response.remedys) {
+            remedyList.push(remedy.id);
+        };
+
+        fetch(urlGetRemedy).then((r) => r.json()).then((response) => {
+            for (remedy of response) {
+                if (!remedyList.includes(remedy.id)) {
+                    html += `
+                    <input type="checkbox" id="${remedy.id}">
+                    <label for="${remedy.id}">${remedy.name}</label>
+                    <br>
+                    `;
+                };
+            };
+
+            html += `
+            <button onclick="elderlyAddRemedy('${elderlyID}')">Adicinar todos</button>
+            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            `;
+
+            span.innerHTML = html;
+            span.style.visibility = 'visible';
+        });
+    });
+};
+
 
 function popElderlyEditName(id) {
     span.style.height = '200px';
@@ -203,6 +244,71 @@ function popElderlyEditCpf(id) {
         span.style.visibility = 'visible';
     };
 };
+
+function popRemedyEditName(id) {
+    span.style.height = '200px';
+
+    if (id === 'teste') {
+        const html = `
+        <h1>Editar nome</h1>
+        <input type="text" id="name" placeholder="Nome">
+        <br>
+        <button>Atualizar</button>
+        <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+        `;
+        
+        span.innerHTML = html;
+        span.style.visibility = 'visible';
+    } else {
+
+        html = `
+            <h1>Editar nome</h1>
+            <input type="text" id="name" placeholder="Nome">
+            <br>
+            <button onclick="updateRemedyName('${id}')">Atualizar</button>
+            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            `;
+        
+        span.innerHTML = html;
+        span.style.visibility = 'visible';
+    };
+};
+
+
+function popRemedyEditIsControled(id) {
+    span.style.height = '200px';
+
+    if (id === 'teste') {
+        const html = `
+        <h1>Editar nome</h1>
+        <input type="text" id="name" placeholder="Nome">
+        <br>
+        <button>Atualizar</button>
+        <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+        `;
+        
+        span.innerHTML = html;
+        span.style.visibility = 'visible';
+    } else {
+
+        html = `
+            <h1>Editar controle do remédio</h1>
+            <label for="control">É controlado? </label>
+            <br>
+            <input type="radio" name="control" id="controled" value="sim">
+            <label for="controled">Sim</label>
+            <input type="radio" name="control" id="notControled" value="nao" checked>
+            <label for="notControled">Não</label>
+            <br>
+            <button onclick="updateRemedyIsControled('${id}')">Atualizar</button>
+            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            `;
+        
+        span.innerHTML = html;
+        span.style.visibility = 'visible';
+    };
+};
+
 
 
 

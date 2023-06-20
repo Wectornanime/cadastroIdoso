@@ -83,8 +83,10 @@ def update_remedy(id):
 
 #elderly remedy
 @app.route('/elderly/<id>/remedy/create/', methods=['POST'])
+@cross_origin()
 def create_elderly_remedy(id):
     data = request.get_json()
+    print(data)
     Bank.ElderlyRemedy.insert(elderlyID=id, remedyList=data['remedys'])
     
     return Bank.ElderlyRemedy.listRemedyByElderly(id)

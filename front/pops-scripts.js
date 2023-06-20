@@ -11,7 +11,7 @@ function updateElderlyName(id) {
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(listElderly());
+        }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
     };
 };
 
@@ -28,7 +28,7 @@ function updateElderlyBirth(id) {
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(listElderly());
+        }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
     };
 };
 
@@ -56,11 +56,58 @@ function updateElderlyCpf(id) {
                     method: "PUT",
                     headers:{ "Content-Type": "application/json" },
                     body: JSON.stringify(bodyPost)
-                }).then(listElderly());
+                }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
             };
         });
     };
 };
 
+function updateRemedyName(id) {
+    urlPut = hostBack+'/remedy/update/'+id;
+    let newName = span.children['name'];
 
+    if (newName.value === '') {
+        window.alert('O campo está vázio!');
+    } else {
+        const bodyPost = {'name': newName.value};
+
+        fetch(urlPut, {
+            method: "PUT",
+            headers:{ "Content-Type": "application/json" },
+            body: JSON.stringify(bodyPost)
+        }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+    };
+};
+
+function updateRemedyIsControled(id) {
+    urlPut = hostBack+'/remedy/update/'+id;
+    let newValue = span.children['control'].checked;
+
+    const bodyPost = {'isControled': (newValue) ? ('sim') : ('nao')};
+
+    fetch(urlPut, {
+        method: "PUT",
+        headers:{ "Content-Type": "application/json" },
+        body: JSON.stringify(bodyPost)
+    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+};
+
+function elderlyAddRemedy(elderlyID) {
+    const urlPost = hostBack + '/elderly/' + elderlyID + '/remedy/create/';
+    let remedyList = [];
+
+    for (let children of span.children) {
+        if (children.tagName === 'INPUT' && children.checked) {
+            remedyList.push(children.id);
+        };
+    };
+
+    const body = {"remedys": remedyList};
+
+    fetch(urlPost, {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(body)
+    }).then(() => span.style.visibility = 'hidden');
+};
 

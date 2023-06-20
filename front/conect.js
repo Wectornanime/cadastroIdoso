@@ -85,7 +85,6 @@ function registerRemedy() {
     };
 };
 
-
 function listRemedy() {
     urlGet = hostBack+'/remedy/list';
     remedyList.innerHTML = '';
@@ -96,5 +95,25 @@ function listRemedy() {
         };
     });
 };
+
+function deleteRemedy(id) {
+    url = hostBack+'/remedy/delete/'+id;
+    fetch(url, {
+        method: "DELETE"
+    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+};
+
+
+// elderly remedy
+
+
+function removeElderlyRemedy(elderlyID, remedyID) {
+    url = hostBack + '/elderly/' + elderlyID + '/remedy/delete/' + remedyID;
+
+    fetch(url, {
+        method: "DELETE",
+    }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+};
+
 
 

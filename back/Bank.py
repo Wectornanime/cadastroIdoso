@@ -151,8 +151,10 @@ class Remedy():
         mycursor = db.cursor()
         print(values)
         for key, value in values.items():
-            if key in ('name'):
+            if key == 'name':
                 cmd = f"UPDATE remedios SET name = '{value}' WHERE id = '{id}'"
+            elif key == 'isControled':
+                cmd = f"UPDATE remedios SET isControled = '{value}' WHERE id = '{id}'"
 
             mycursor.execute(cmd)
             db.commit()

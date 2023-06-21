@@ -37,13 +37,13 @@ function popElderly(id) {
 
             const html = `
             <h1>Dados de ${response.name}</h1>
-            <p>Nome: ${response.name} <button onclick="popElderlyEditName('${response.id}')">Editar</button></p>
-            <p>Data de nascimento: ${birthConverted} <button onclick="popElderlyEditBirth('${response.id}')">Editar</button></p>
-            <p>CPF: ${response.cpf} <button onclick="popElderlyEditCpf('${response.id}')">Editar</button></p>
+            <p>Nome: ${response.name} <button class="edit" onclick="popElderlyEditName('${response.id}')">Editar</button></p>
+            <p>Data de nascimento: ${birthConverted} <button class="edit" onclick="popElderlyEditBirth('${response.id}')">Editar</button></p>
+            <p>CPF: ${response.cpf} <button class="edit" onclick="popElderlyEditCpf('${response.id}')">Editar</button></p>
             <br>
-            <button onclick="popElderlyRemedy('${response.id}')">Listar remédios</button>
-            <button onclick="deleteElderly('${response.id}')">Deletar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button class="primary" onclick="popElderlyRemedy('${response.id}')">Listar remédios</button>
+            <button class="del" onclick="deleteElderly('${response.id}')">Deletar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
             
             span.innerHTML = html;
@@ -79,13 +79,13 @@ function popRemedy(id) {
             response = response[0];
             const html = `
             <h1>Dados do remédio</h1>
-            <p>Nome: ${response.name} <button onclick="popRemedyEditName('${response.id}')">Editar</button></p>
+            <p>Nome: ${response.name} <button class="edit" onclick="popRemedyEditName('${response.id}')">Editar</button></p>
             <p>${
                 (response.isControled === 'sim') ? (`O remédio é controlado!`) : (`O remédio não é controlado!`)
-            } <button onclick="popRemedyEditIsControled('${response.id}')">Editar</button></p>
+            } <button class="edit" onclick="popRemedyEditIsControled('${response.id}')">Editar</button></p>
             <br>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
-            <button onclick="deleteRemedy('${response.id}')">Deletar</button>
+            <button class="del" onclick="deleteRemedy('${response.id}')">Deletar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
             
 
@@ -116,13 +116,13 @@ function popElderlyRemedy(id) {
                 html += `
                     <p>${data.name} &bull; ${
                         (data.isControled === 'sim') ? ('Controlado') : ('Não controlado')
-                    } <button onclick="removeElderlyRemedy('${id}', '${data.id}')">Remover</button></p>
+                    } <button class="del" onclick="removeElderlyRemedy('${id}', '${data.id}')">Remover</button></p>
                 `;
             };
 
             html += `
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
-            <button onclick="popElderlyAddRemedy('${id}')">Adicionar</button>
+            <button class="primary" onclick="popElderlyAddRemedy('${id}')">Adicionar remédios</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
 
             span.innerHTML = html;
@@ -157,8 +157,8 @@ function popElderlyAddRemedy(elderlyID) {
             };
 
             html += `
-            <button onclick="elderlyAddRemedy('${elderlyID}')">Adicinar todos</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button class="primary" onclick="elderlyAddRemedy('${elderlyID}')">Adicinar todos</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
 
             span.innerHTML = html;
@@ -188,8 +188,8 @@ function popElderlyEditName(id) {
             <h1>Editar nome</h1>
             <input type="text" id="name" placeholder="Nome">
             <br>
-            <button onclick="updateElderlyName('${id}')">Atualizar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button class="primary" onclick="updateElderlyName('${id}')">Atualizar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
         
         span.innerHTML = html;
@@ -217,8 +217,10 @@ function popElderlyEditBirth(id) {
             <h1>Editar data de nascimento</h1>
             <input type="date" id="birth">
             <br>
-            <button onclick="updateElderlyBirth('${id}')">Atualizar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <br>
+            <br>
+            <button class="primary" onclick="updateElderlyBirth('${id}')">Atualizar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
         
         span.innerHTML = html;
@@ -246,8 +248,8 @@ function popElderlyEditCpf(id) {
             <h1>Editar CPF</h1>
             <input type="text" id="cpf" maxlength="14" placeholder="CPF">
             <br>
-            <button onclick="updateElderlyCpf('${id}')">Atualizar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button class="primary" onclick="updateElderlyCpf('${id}')">Atualizar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
         
         span.innerHTML = html;
@@ -276,8 +278,8 @@ function popRemedyEditName(id) {
             <h1>Editar nome</h1>
             <input type="text" id="name" placeholder="Nome">
             <br>
-            <button onclick="updateRemedyName('${id}')">Atualizar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <button class="primary" onclick="updateRemedyName('${id}')">Atualizar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
         
         span.innerHTML = html;
@@ -311,8 +313,9 @@ function popRemedyEditIsControled(id) {
             <input type="radio" name="control" id="notControled" value="nao" checked>
             <label for="notControled">Não</label>
             <br>
-            <button onclick="updateRemedyIsControled('${id}')">Atualizar</button>
-            <button onclick="span.style.visibility = 'hidden'">Fechar</button>
+            <br>
+            <button class="primary" onclick="updateRemedyIsControled('${id}')">Atualizar</button>
+            <button class="secondary" onclick="span.style.visibility = 'hidden'">Fechar</button>
             `;
         
         span.innerHTML = html;

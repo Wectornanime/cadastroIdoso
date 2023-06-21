@@ -3,7 +3,7 @@ const inputCpf = document.querySelector('input#cpf');
 let spanCpf = document.querySelector('span').children['cpf'];
 
 function swap(sec) {
-    let width = 710
+    let width = 900
     mainContent.style.transform = `translateX(-${sec * width}px)`;
     listElderly();
     listRemedy();

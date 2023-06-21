@@ -3,6 +3,14 @@
 
 :root {
     --primary-font: 'Poppins', sans-serif;
+    
+    --primary-color: #00B1FD;
+    --second-color: #7ED8FF;
+    
+    
+    --input-color: #ECECEC;
+    --session-color: #FAFAFA;
+
 }
 
 * {
@@ -17,19 +25,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: cyan;
     gap: 10px;
 }
 
 header {
     width: 100vw;
-    height: 10%;
-    background-color: chartreuse;
+    height: 20%;
+    background-color: var(--primary-color);
 }
 
 nav {
-    background-color: white;
-    width: 80%;
+    background-color: var(--second-color);
+    color: white;
+    width: 50%;
     padding: 5px 0;
     border-radius: 20px;
 }
@@ -47,8 +55,8 @@ nav > ul > li {
 }
 
 main {
-    height: 70%;
-    width: 700px;
+    height: 80%;
+    width: 900px;
     overflow: hidden;
     display: flex;
     border-radius: 20px;
@@ -56,7 +64,6 @@ main {
 
 main > .content {
     height: 100%;
-    gap: 10px;
     display: flex;
     flex-direction: row;
     transition: 0.5s ease-in-out;
@@ -65,8 +72,9 @@ main > .content {
 
 
 section {
+    height: 90%;
     width: 700px;
-    height: 100%;
+    margin: 0 100px;
     position: relative;
     border-radius: 20px;
     display: flex;
@@ -74,7 +82,8 @@ section {
     justify-content: start;
     flex-direction: column;
     gap: 10px;
-    background-color: white;
+    background-color: var(--session-color);
+    box-shadow: 20px 30px 15px rgba(0, 0, 0, 0.322);
 }
 
 h1 {
@@ -83,11 +92,46 @@ h1 {
 }
 
 input {
-    border-radius: 20px;
+    border-radius: 5px;
     margin-bottom: 5px;
     padding: 5px;
     padding-left: 10px;
+    border: none;
+    background-color: var(--input-color);
 }
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.322);
+}
+
+button.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button.secondary {
+    background-color: var(--second-color);
+    color: white;
+}
+
+button.edit {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button.del {
+    background-color: red;
+    color: white;
+}
+
 
 /* section cad */
 section.cad form {
@@ -101,9 +145,7 @@ section.cad input#name {
 section.cad button {
     margin-top: auto;
     margin-bottom: 25px;
-    border-radius: 20px;
     padding: 5px 15px;
-    cursor: pointer;
 }
 
 
@@ -185,7 +227,6 @@ span.popInfo h1 {
 span.popInfo button {
     border-radius: 10px;
     padding: 0 10px;
-    cursor: pointer;
     margin-top: auto;
     margin-bottom: 0px;
 }

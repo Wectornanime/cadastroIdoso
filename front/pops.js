@@ -25,10 +25,11 @@ function popElderly(id) {
         url = host+'/elderly/list/'+id;
         fetch(url).then((r) => r.json()).then((response) => {
             response = response[0];
+            let birthConverted = response.birth.split(' ').slice(1, 4).join('-');
             const html = `
             <h1>Dados de ${response.name}</h1>
             <p>Nome: ${response.name} <button onclick="popElderlyEditName('${response.id}')">Editar</button></p>
-            <p>Data de nascimento: ${response.birth} <button onclick="popElderlyEditBirth('${response.id}')">Editar</button></p>
+            <p>Data de nascimento: ${birthConverted} <button onclick="popElderlyEditBirth('${response.id}')">Editar</button></p>
             <p>CPF: ${response.cpf} <button onclick="popElderlyEditCpf('${response.id}')">Editar</button></p>
             <br>
             <button onclick="popElderlyRemedy('${response.id}')">Listar remédios</button>

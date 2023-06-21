@@ -244,7 +244,7 @@ function popElderlyEditCpf(id) {
 
         html = `
             <h1>Editar CPF</h1>
-            <input type="text" id="cpf" placeholder="CPF">
+            <input type="text" id="cpf" maxlength="14" placeholder="CPF">
             <br>
             <button onclick="updateElderlyCpf('${id}')">Atualizar</button>
             <button onclick="span.style.visibility = 'hidden'">Fechar</button>
@@ -252,6 +252,7 @@ function popElderlyEditCpf(id) {
         
         span.innerHTML = html;
         span.style.visibility = 'visible';
+        eventEditCpf();
     };
 };
 

@@ -25,7 +25,16 @@ function popElderly(id) {
         url = host+'/elderly/list/'+id;
         fetch(url).then((r) => r.json()).then((response) => {
             response = response[0];
-            let birthConverted = response.birth.split(' ').slice(1, 4).join('-');
+            
+            const monthAbb = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const monthConverted= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+            const birthDay = response.birth.split(' ')[1];
+            const birthMonth = monthConverted[ monthAbb.indexOf(response.birth.split(' ')[2]) ];
+            const birthYear = response.birth.split(' ')[3];
+
+            const birthConverted = `${birthDay} de ${birthMonth} de ${birthYear}`
+
             const html = `
             <h1>Dados de ${response.name}</h1>
             <p>Nome: ${response.name} <button onclick="popElderlyEditName('${response.id}')">Editar</button></p>

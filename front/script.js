@@ -31,25 +31,29 @@ inputCpf.addEventListener('keypress', (char) => {
     };
 });
 
-spanCpf.addEventListener('keypress', (char) => {
-    const permitList = '1234567890-.';
 
-    if (!permitList.includes(char.key)) {
-        char.preventDefault()
-    } else if ((char.key != '-') && (spanCpf.value.length === 3 || spanCpf.value.length === 7 )) {
-        if (char.key != '.'){
+function eventEditCpf(){
+    let spanCpf = document.querySelector('span').children['cpf'];
+    spanCpf.addEventListener('keypress', (char) => {
+        const permitList = '1234567890-.';
+    
+        if (!permitList.includes(char.key)) {
+            char.preventDefault()
+        } else if ((char.key != '-') && (spanCpf.value.length === 3 || spanCpf.value.length === 7 )) {
+            if (char.key != '.'){
+                char.preventDefault();
+                spanCpf.value += '.';
+                spanCpf.value += char.key;
+            };
+        } else if ((char.key != '.') && (spanCpf.value.length === 11)) {
+            if (char.key != '-'){
+                char.preventDefault();
+                spanCpf.value += '-';
+                spanCpf.value += char.key;
+            };
+        } else if ((char.key === '.' || char.key === '-') && (spanCpf.value.length != 3 || spanCpf.value.length != 7 || spanCpf.value.length != 11)) {
             char.preventDefault();
-            spanCpf.value += '.';
-            spanCpf.value += char.key;
         };
-    } else if ((char.key != '.') && (spanCpf.value.length === 11)) {
-        if (char.key != '-'){
-            char.preventDefault();
-            spanCpf.value += '-';
-            spanCpf.value += char.key;
-        };
-    } else if ((char.key === '.' || char.key === '-') && (spanCpf.value.length != 3 || spanCpf.value.length != 7 || spanCpf.value.length != 11)) {
-        char.preventDefault();
-    };
-});
+    });
+};
 

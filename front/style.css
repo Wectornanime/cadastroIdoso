@@ -159,6 +159,7 @@ section.list ul {
     overflow:auto ;
     width: 95%;
     margin: 10px;
+    padding-bottom: 20px;
 }
 
 section.list li {

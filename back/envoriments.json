@@ -2,7 +2,7 @@
     "db":{
       "host": "localhost",
       "user": "root",
-      "password": "aluno",
+      "password": "root",
       "database": "cadastro_bd",
       "tables": {
         "elderly": "cadastroidoso",

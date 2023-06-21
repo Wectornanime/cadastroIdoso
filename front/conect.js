@@ -37,7 +37,7 @@ function registerElderly() {
                     method: "POST",
                     headers:{ "Content-Type": "application/json" },
                     body: JSON.stringify(bodyPost)
-                }).then(listElderly());
+                }).then(listElderly()).then(() => window.alert('Registrado com sucesso!'));
             };
         });
     };
@@ -58,7 +58,7 @@ function deleteElderly(id) {
     url = hostBack+'/elderly/delete/'+id;
     fetch(url, {
         method: "DELETE"
-    }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+    }).then(() => span.style.visibility = 'hidden').then(() => listElderly()).then(() => window.alert('Registro deletado com sucesso!'));
 };
 
 
@@ -81,7 +81,7 @@ function registerRemedy() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        });
+        }).then(() => window.alert('Registrado com sucesso!'));
     };
 };
 
@@ -100,19 +100,18 @@ function deleteRemedy(id) {
     url = hostBack+'/remedy/delete/'+id;
     fetch(url, {
         method: "DELETE"
-    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy()).then(() => window.alert('Registro deletado com sucesso!'));
 };
 
 
 // elderly remedy
-
 
 function removeElderlyRemedy(elderlyID, remedyID) {
     url = hostBack + '/elderly/' + elderlyID + '/remedy/delete/' + remedyID;
 
     fetch(url, {
         method: "DELETE",
-    }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+    }).then(() => span.style.visibility = 'hidden').then(() => listElderly()).then(() => window.alert('Registro deletado com sucesso!'));
 };
 
 

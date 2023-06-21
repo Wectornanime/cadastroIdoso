@@ -11,7 +11,7 @@ remedy:
 [x] - delete
 
 remedy-elderly:
-[] - create
+[X] - create
 [x] - read
 [x] - delete
 

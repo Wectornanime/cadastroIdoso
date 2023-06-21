@@ -11,7 +11,7 @@ function updateElderlyName(id) {
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+        }).then(() => span.style.visibility = 'hidden').then(() => listElderly()).then(() => window.alert('Registro alterado com sucesso!'));
     };
 };
 
@@ -28,7 +28,7 @@ function updateElderlyBirth(id) {
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+        }).then(() => span.style.visibility = 'hidden').then(() => listElderly()).then(() => window.alert('Registro alterado com sucesso!'));
     };
 };
 
@@ -56,7 +56,7 @@ function updateElderlyCpf(id) {
                     method: "PUT",
                     headers:{ "Content-Type": "application/json" },
                     body: JSON.stringify(bodyPost)
-                }).then(() => span.style.visibility = 'hidden').then(() => listElderly());
+                }).then(() => span.style.visibility = 'hidden').then(() => listElderly()).then(() => window.alert('Registro alterado com sucesso!'));
             };
         });
     };
@@ -75,7 +75,7 @@ function updateRemedyName(id) {
             method: "PUT",
             headers:{ "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+        }).then(() => span.style.visibility = 'hidden').then(() => listRemedy()).then(() => window.alert('Registro alterado com sucesso!'));
     };
 };
 
@@ -89,7 +89,7 @@ function updateRemedyIsControled(id) {
         method: "PUT",
         headers:{ "Content-Type": "application/json" },
         body: JSON.stringify(bodyPost)
-    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy());
+    }).then(() => span.style.visibility = 'hidden').then(() => listRemedy()).then(() => window.alert('Registro alterado com sucesso!'));
 };
 
 function elderlyAddRemedy(elderlyID) {
@@ -108,6 +108,6 @@ function elderlyAddRemedy(elderlyID) {
         method: "POST",
         headers: { "Content-Type": "application/json"},
         body: JSON.stringify(body)
-    }).then(() => span.style.visibility = 'hidden');
+    }).then(() => span.style.visibility = 'hidden').then(() => window.alert('Registrado com sucesso!'));
 };
 

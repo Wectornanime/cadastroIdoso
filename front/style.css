@@ -32,6 +32,12 @@ header {
     width: 100vw;
     height: 20%;
     background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    height: 100%;
 }
 
 nav {
@@ -166,7 +172,7 @@ section.list li {
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-    width: 250px;
+    width: 350px;
     height: 30px;
     padding: 5px;
 }

@@ -1,3 +1,5 @@
+USE `cadastro_bd`;
+
 INSERT INTO `cadastroidoso` VALUES
   ('52f34466-1af0-4b42-9408-cd5da6b11dc3','Marcos Andre Cavalcanti Pereira','1970-12-09','145.923.488-41'),
   ('780c6a2c-faf4-4626-a8d3-aaa7dabb9811','Denise Maria Da Silva','1978-01-02','753.148.932-45'),

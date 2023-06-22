@@ -4,7 +4,7 @@ const host = 'http://localhost:3000';
 
 
 function popElderly(id) {
-    span.style.height = '250px';
+    span.style.height = '300px';
     if (id === 'teste'){
         const html = `
             <h1>Dados de Teste</h1>

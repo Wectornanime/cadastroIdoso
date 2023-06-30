@@ -18,9 +18,13 @@ O projeto é uma aplicação web completa com front, back e banco de dados, para
 
   1. Abra um terminal na pasta `back`
   2. Instale as depedências necessárias no projeto executando o comando:
-     ```bash
-     pip install -r requirements.txt
-     ```
+    ```bash
+    pip install -r requirements.txt
+    ```
+  3. Inicialize o backend rodando o comando:
+    ```bash
+    python app.py
+    ```
 - Frontend:
 
   1. Instale um servidor http;
@@ -39,4 +43,4 @@ O projeto é uma aplicação web completa com front, back e banco de dados, para
   - A porta ultilizada é `3000`.
 - Frontend:
 
-  - A porta vai depender do servidor.
+  - A porta vai depender do servidor, geralmente se utiliza a `80` ou a `443`, mas extensões do VS code como o `live server` faz utilização da porta `5500`.

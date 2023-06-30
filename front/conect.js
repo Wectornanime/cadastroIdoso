@@ -37,7 +37,13 @@ function registerElderly() {
                     method: "POST",
                     headers:{ "Content-Type": "application/json" },
                     body: JSON.stringify(bodyPost)
-                }).then(listElderly()).then(() => window.alert('Registrado com sucesso!'));
+                }).then(listElderly())
+                .then(() => window.alert('Registrado com sucesso!'))
+                .then(() => {
+                    formCadElderly.children['name'].value = '';
+                    formCadElderly.children['birth'].value = '';
+                    formCadElderly.children['cpf'].value = '';
+                });
             };
         });
     };
@@ -81,7 +87,8 @@ function registerRemedy() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(bodyPost)
-        }).then(() => window.alert('Registrado com sucesso!'));
+        }).then(() => window.alert('Registrado com sucesso!'))
+        .then(() => {formCadRemedy.children['name'].value = ''});
     };
 };
 

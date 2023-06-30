@@ -22,6 +22,8 @@ CREATE TABLE remedio_idoso (
     remedy_id CHAR(36) NOT NULL,
     elderly_id CHAR(36) NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (elderly_id) REFERENCES cadastroidoso(id),
-    FOREIGN KEY (remedy_id) REFERENCES remedios(id)
+    CONSTRAINT fk_rel_elderly FOREIGN KEY (elderly_id) REFERENCES cadastroidoso(id)
+    ON DELETE CASCADE,
+    CONSTRAINT fk_rel_remedy FOREIGN KEY (remedy_id) REFERENCES remedios(id)
+    ON DELETE CASCADE
 );

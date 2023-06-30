@@ -1,6 +1,6 @@
 # cadastroIdoso
 
-O projeto é uma aplicação web completa com front, back e banco de dados. Foi criado para a cadeira de Banco de Dados da Faculdade.
+O projeto é uma aplicação web completa com front, back e banco de dados, para cadastro de idosos e remédios que podem ser associados ao idoso. Foi criado para a cadeira de Banco de Dados da Faculdade.
 
 ## Tecnologias utilizadas:
 
@@ -11,31 +11,32 @@ O projeto é uma aplicação web completa com front, back e banco de dados. Foi 
 ## Como executar o projeto?
 
 - Banco de dados:
-   1. Execute o arquivo `query.sql` no seu MySQL;
-   2. Caso queria inserir dados de exemplo, execute o aquivo `insert-exemple.sql` no seu MySQL.
 
+  1. Execute o arquivo `query.sql` no seu MySQL;
+  2. Caso queria inserir dados de exemplo, execute o aquivo `insert-exemple.sql` no seu MySQL.
 - Backend:
-   1. Abra um terminal na pasta `back`
-   2. Instale as depedências necessárias no projeto executando o comando:
-      ```bash
-      pip install -r requirements.txt
-      ```
 
+  1. Abra um terminal na pasta `back`
+  2. Instale as depedências necessárias no projeto executando o comando:
+     ```bash
+     pip install -r requirements.txt
+     ```
 - Frontend:
-   1. Instale um servidor http;
-   2. Mova os arquivos da pasta `front` para o servidor;
-   3. Execute o servidor http;
+
+  1. Instale um servidor http;
+  2. Mova os arquivos da pasta `front` para o servidor;
+  3. Execute o servidor http;
 
 ## Configurações do projeto:
+
 - Considera-se que o projeto esteja sendo executado em `localhost`.
-
 - Banco de dados:
-   - Considera-se que o servidor MySQL esteja rodando na porta padrão, `3306`.
 
+  - Considera-se que o servidor MySQL esteja rodando na porta padrão, `3306`.
 - Backend:
-   - O arquivo `envoriments.json` contém todas as informações que o back ultiliza para acessar o banco de dados;
-   - A porta ultilizada é `3000`.
 
+  - O arquivo `envoriments.json` contém todas as informações que o back ultiliza para acessar o banco de dados;
+  - A porta ultilizada é `3000`.
 - Frontend:
-   - A porta vai depender do servidor.
 
+  - A porta vai depender do servidor.

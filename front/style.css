@@ -4,8 +4,8 @@
 :root {
     --primary-font: 'Poppins', sans-serif;
     
-    --primary-color: #00B1FD;
-    --second-color: #7ED8FF;
+    --primary-color: #0b1c24;
+    --second-color: #082430;
     
     
     --input-color: #ECECEC;
@@ -43,9 +43,10 @@ header img {
 nav {
     background-color: var(--second-color);
     color: white;
-    width: 50%;
-    padding: 5px 0;
-    border-radius: 20px;
+    width: 37%;
+    padding: 4px 0;
+    border-radius: 18px;
+    box-shadow: 5px, 5px, 5px;
 }
 
 nav > ul {
@@ -89,7 +90,7 @@ section {
     flex-direction: column;
     gap: 10px;
     background-color: var(--session-color);
-    box-shadow: 20px 30px 15px rgba(0, 0, 0, 0.322);
+    box-shadow: 10px 13px 8px rgba(0, 0, 0, 0.322);
 }
 
 h1 {
@@ -115,7 +116,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.322);
+    box-shadow: 2px 5px 8px rgba(85, 25, 25, 0.322);
 }
 
 button.primary {

@@ -29,9 +29,9 @@ function popElderly(id) {
             const monthAbb = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             const monthConverted= ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
-            const birthDay = response.birth.split(' ')[1];
-            const birthMonth = monthConverted[ monthAbb.indexOf(response.birth.split(' ')[2]) ];
-            const birthYear = response.birth.split(' ')[3];
+            const birthDay = response.birth.split('-')[2];
+            const birthMonth = monthConverted[ Number(response.birth.split('-')[1]) -1 ];
+            const birthYear = response.birth.split('-')[0];
 
             const birthConverted = `${birthDay} de ${birthMonth} de ${birthYear}`
 
